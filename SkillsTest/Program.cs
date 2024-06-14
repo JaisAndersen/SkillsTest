@@ -25,6 +25,7 @@
 
             Console.WriteLine(g1);
             Console.WriteLine(g2);
+            
             Console.WriteLine("\nTryk en knap for næste opgave.");
             Console.ReadKey();
             Console.Clear();
@@ -49,6 +50,17 @@
             Console.WriteLine("\nTryk en knap for næste opgave.");
             Console.ReadKey();
             Console.Clear();
+
+            Console.WriteLine("Opgave 6:\n");
+            Console.WriteLine("Tester bool og udskriver:\n");
+            Booking toLong = new Booking(5, new DateTime(2024, 6, 14, 10, 0, 0), new DateTime(2024, 6, 14, 16, 0, 0), 15);
+            Console.WriteLine($"Booking: {toLong.ID} - Er OK: {toLong.BookingDurationOK}");
+            Console.WriteLine($"Booking: {b1.ID} - Er OK: {b1.BookingDurationOK}");
+
+            Console.WriteLine("\nTryk en knap for næste opgave.");
+            Console.ReadKey();
+            Console.Clear();
+
         }
     }
 }

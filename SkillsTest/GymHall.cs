@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -54,6 +55,6 @@ namespace SkillsTest
         public void RemoveBooking(Booking booking)
         {
             _bookinger.Remove(ID);
-        }
+        }        
     }
 }
