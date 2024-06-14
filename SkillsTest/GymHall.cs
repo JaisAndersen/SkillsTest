@@ -55,6 +55,43 @@ namespace SkillsTest
         public void RemoveBooking(Booking booking)
         {
             _bookinger.Remove(ID);
-        }        
+        }
+
+        public int TotalBookings()
+        {
+            return _bookinger.Count;
+        }
+
+        //Opgave 7 & 8: 
+    public bool Validate(Booking booking)
+        {
+            if (!booking.BookingDurationOK)
+            {
+                Exception e = new Exception($"Booking må ikke være længere end to timer.");
+                throw e;
+                //Console.WriteLine("Booking kan må ikke være længere end to timer");
+                //return false;
+            }
+            else if (booking.End.Hour - booking.Start.Hour < 0)
+            {
+                Exception e = new Exception($"Booking må ikke starte tidligere end det slutter.");
+                throw e;
+                //Console.WriteLine("Booking må ikke starte tidligere end det slutter");
+                //return false;
+            }
+            else if (booking.Participants > 22)
+            {
+                Exception e = new Exception($"En booking må ikke indeholde mere end 22 personer");
+                throw e;
+                //Console.WriteLine("En booking må ikke indegolde mere end 22 personer");
+                //return false;
+            }
+            else
+            {
+                Console.WriteLine($"\nBooking OK");
+                return true;
+            }
+        }
+
     }
 }

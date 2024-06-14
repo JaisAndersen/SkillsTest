@@ -56,15 +56,36 @@
             Booking toLong = new Booking(5, new DateTime(2024, 6, 14, 10, 0, 0), new DateTime(2024, 6, 14, 16, 0, 0), 15);
             Console.WriteLine($"Booking: {toLong.ID} - Er OK: {toLong.BookingDurationOK}");
             Console.WriteLine($"Booking: {b1.ID} - Er OK: {b1.BookingDurationOK}");
+            
             Console.WriteLine("\nTester bool 'IsSundayOK' og udskriver:\n");
             Booking isSunday = new Booking(6, new DateTime(2024, 6, 16, 12, 0, 0), new DateTime(2024, 6, 16, 14, 0, 0), 15);
             Console.WriteLine($"Booking: {isSunday.ID} - Er søndag: {isSunday.IsSundayOK}");
             Console.WriteLine($"Booking: {b1.ID} - Er søndag: {b1.IsSundayOK}");
 
+            Console.WriteLine("\nTester 'TotalBookings' og udskriver:\n");
+            Console.WriteLine(g1.TotalBookings());
+            g1.RegisterBooking(b2);
+            g1.RegisterBooking(b4);
+            Console.WriteLine(g1.TotalBookings());
+
             Console.WriteLine("\nTryk en knap for næste opgave.");
             Console.ReadKey();
             Console.Clear();
 
+
+            Console.WriteLine("Opgave 8:\n");
+            Console.WriteLine("Tester exeptions med try/catch metoden:\n"); 
+            Booking toMany = new Booking(7, new DateTime(2024, 6, 14, 10, 0, 0), new DateTime(2024, 6, 14, 12, 0, 0), 50);
+            g1.RegisterBooking(toMany);
+            try
+            {
+                g1.Validate(toMany);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            Console.ReadKey();
         }
     }
 }
