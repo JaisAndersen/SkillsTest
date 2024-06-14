@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SkillsTest
 {
+    //Opgave 2:
     public class Booking
     {
         public int ID { get; private set; }
@@ -15,6 +16,7 @@ namespace SkillsTest
         
         //Opgave 6:
         public bool BookingDurationOK { get { return (Start.AddHours(2) >= End); } }
+        public bool IsSundayOK { get { return (Start.DayOfWeek == DayOfWeek.Sunday); } }
        
         public Booking(int iD, DateTime start, DateTime end, int participants)
         {

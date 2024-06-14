@@ -52,10 +52,14 @@
             Console.Clear();
 
             Console.WriteLine("Opgave 6:\n");
-            Console.WriteLine("Tester bool og udskriver:\n");
+            Console.WriteLine("Tester bool 'BookingDurationOK' og udskriver:\n");
             Booking toLong = new Booking(5, new DateTime(2024, 6, 14, 10, 0, 0), new DateTime(2024, 6, 14, 16, 0, 0), 15);
             Console.WriteLine($"Booking: {toLong.ID} - Er OK: {toLong.BookingDurationOK}");
             Console.WriteLine($"Booking: {b1.ID} - Er OK: {b1.BookingDurationOK}");
+            Console.WriteLine("\nTester bool 'IsSundayOK' og udskriver:\n");
+            Booking isSunday = new Booking(6, new DateTime(2024, 6, 16, 12, 0, 0), new DateTime(2024, 6, 16, 14, 0, 0), 15);
+            Console.WriteLine($"Booking: {isSunday.ID} - Er søndag: {isSunday.IsSundayOK}");
+            Console.WriteLine($"Booking: {b1.ID} - Er søndag: {b1.IsSundayOK}");
 
             Console.WriteLine("\nTryk en knap for næste opgave.");
             Console.ReadKey();
