@@ -8,6 +8,7 @@ namespace SkillsTest
 {
     public class Booking
     {
+        //Opgave 2:
         public int ID { get; private set; }
         public DateTime Start {  get; private set; }
         public DateTime End { get; private set; }
